@@ -1,0 +1,32 @@
+valor de deveExibir: {{deveExibir}}
+
+<button (click)="trocarValor()">Trocar valor</button>
+
+<div *ngIf="deveExibir; else blocoSenao">eu apareço quando o deveExibir:{{deveExibir}}</div>
+<ng-template #blocoSenao>se deveExibir: {{deveExibir}} eu apareço</ng-template>
+
+<div *ngIf="soma(5,6) > 10">Olá estou dentro da div 2</div>
+
+comando completo:
+<ng-template [ngIf]="deveExibir"><div>Olá estou dentro da div 3</div></ng-template>
+
+<h2>
+<div *ngIf="deveExibir; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>apareço quando aciona o then.</ng-template>
+<ng-template #elseBlock>apareço quando aciona o else.</ng-template>
+</h2>
+
+<hr>
+
+<ul>
+  <li *ngFor="let fruta of listaFrutas">{{fruta}}</li>
+</ul>
+
+<hr>
+<ul>
+  <li
+  *ngFor="let carro of carrosLista;
+  let i = index;
+  first as primeiro;
+  last as ultimo"> {{primeiro}} - {{i+1}} - Carro:{{carro.placa}} - cor: {{carro.cor}} - {{ultimo}}</li>
+</ul>

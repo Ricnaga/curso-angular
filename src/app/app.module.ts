@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { DataBindingExecComponent } from './data-binding-exec/data-binding-exec.component';
 import { ContadorComponent } from './contador/contador.component';
 import { ExerciseExplainedComponent } from './exercise-explained/exercise-explained.component';
+import { ExecDiretivasComponent } from './exec-diretivas/exec-diretivas.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ExerciseExplainedComponent } from './exercise-explained/exercise-explai
     FooterComponent,
     DataBindingExecComponent,
     ContadorComponent,
-    ExerciseExplainedComponent
+    ExerciseExplainedComponent,
+    ExecDiretivasComponent
   ],
   imports: [
     BrowserModule,

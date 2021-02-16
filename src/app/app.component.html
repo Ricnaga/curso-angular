@@ -1,12 +1,14 @@
 <app-header [newTitle]="title">
 </app-header>
-
+<app-contador [initialValue]="receiveValue" (addModifiedValue)="addChanges($event)" (subModifiedValue)="subChanges($event)"></app-contador>
 <!-- <app-home>
 </app-home> -->
-
+<br>
+<br>
 <app-data-binding-exec
-[palavra]="wordApp" [color]="favoriteColor">
+[palavra]="wordApp" [color]="favoriteColor" (clicado)="eventoRecebido($event)">
 </app-data-binding-exec>
+
 
 <app-footer>
 </app-footer>

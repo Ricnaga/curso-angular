@@ -1,7 +1,22 @@
+<!-- exemplo de evento binding -->
+<button (click)="onClickBotaoEmissor($event)">Emitir informação de clique</button>
+
+<button (click)="onClick($event)" (mouseenter)="passouMouse()">
+  Clique em mim!
+</button>
+<br>
+<input type="text" [value]="valorDoInput" (keyup)="digitouAlgo($event)">
+<br>
+Valor do Input: {{valorDoInput}}
+
+<hr>
+
+<!-- exemplo de data binding -->
+
 <h2>Palavra: {{palavra}}</h2>
 <h2>Cor: {{color}}</h2>
 <input type="text" [value]="initialValue">
 <img [src]="imageURL" alt="unsplash">
 <button [disabled]="isDisabled">Clica em mim</button>
 
-<p [attr.aria-label]="isDisabled ? 'botão desabilitado' : accessibilityText" >Um texto qualquer</p>
+<p [attr.aria-label]="isDisabled ? 'botão desabilitado' : accessibilityText">Um texto qualquer</p>

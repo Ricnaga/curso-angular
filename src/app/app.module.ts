@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { DataBindingExecComponent } from './data-binding-exec/data-binding-exec.component';
+import { ContadorComponent } from './contador/contador.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DataBindingExecComponent } from './data-binding-exec/data-binding-exec.
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    DataBindingExecComponent
+    DataBindingExecComponent,
+    ContadorComponent
   ],
   imports: [
     BrowserModule,

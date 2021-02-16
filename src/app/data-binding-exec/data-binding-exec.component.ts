@@ -17,6 +17,8 @@ export class DataBindingExecComponent implements OnInit {
 
   valorDoInput = '';
 
+  valorContador = 10;
+
   constructor() {
     setTimeout(() => {
       this.isDisabled = false;
@@ -43,5 +45,6 @@ export class DataBindingExecComponent implements OnInit {
     console.log('devo emitir informação ao componente pai');
     this.clicado.emit($event);
   }
+
 
 }

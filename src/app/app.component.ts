@@ -28,4 +28,5 @@ export class AppComponent {
   subChanges($event) {
     this.receiveValue -= 1;
   }
+
 }

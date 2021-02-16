@@ -1,3 +1,6 @@
+<!-- Exercício event e property binding -->
+valor atual do contador: {{valorContador}}
+<app-exercise-explained [(valor)]="valorContador" ></app-exercise-explained>
 <!-- exemplo de evento binding -->
 <button (click)="onClickBotaoEmissor($event)">Emitir informação de clique</button>
 
@@ -16,7 +19,7 @@ Valor do Input: {{valorDoInput}}
 <h2>Palavra: {{palavra}}</h2>
 <h2>Cor: {{color}}</h2>
 <input type="text" [value]="initialValue">
-<img [src]="imageURL" alt="unsplash">
+<img class="catImage" [src]="imageURL" alt="unsplash">
 <button [disabled]="isDisabled">Clica em mim</button>
 
 <p [attr.aria-label]="isDisabled ? 'botão desabilitado' : accessibilityText">Um texto qualquer</p>

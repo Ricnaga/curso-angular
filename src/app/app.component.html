@@ -1,11 +1,12 @@
-<header class="header">
-  <h1 class="header__title">{{title}}</h1>
-</header>
+<app-header [newTitle]="title">
+</app-header>
 
-<main>
-  <p>Corpo da aplicação</p>
-</main>
+<!-- <app-home>
+</app-home> -->
 
-<footer class="footer">
-  <p class="footer__text">Feito com amor</p>
-</footer>
+<app-data-binding-exec
+[palavra]="wordApp" [color]="favoriteColor">
+</app-data-binding-exec>
+
+<app-footer>
+</app-footer>

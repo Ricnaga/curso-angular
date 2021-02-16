@@ -6,9 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Seja bem-vindo';
+  wordApp = 'uma palavra do appcomponent';
+  favoriteColor = 'green';
+  title = 'titulo via appComponent';
 
-  constructor(){
-
+  constructor() {
+    setTimeout(() => {
+      this.title = 'titulo alterado em 3 segundos';
+    }, 3000);
   }
 }

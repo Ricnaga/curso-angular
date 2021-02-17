@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,12 @@ import { ContadorComponent } from './contador/contador.component';
 import { ExerciseExplainedComponent } from './exercise-explained/exercise-explained.component';
 import { ExecDiretivasComponent } from './exec-diretivas/exec-diretivas.component';
 import { MemesComponent } from './memes/memes.component';
+import { DiretivaNgclassComponent } from './diretiva-ngclass/diretiva-ngclass.component';
+import { PipeExecComponent } from './pipe-exec/pipe-exec.component';
+import localeBR from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localeBR, 'pt')
 
 @NgModule({
   declarations: [
@@ -22,13 +28,18 @@ import { MemesComponent } from './memes/memes.component';
     ContadorComponent,
     ExerciseExplainedComponent,
     ExecDiretivasComponent,
-    MemesComponent
+    MemesComponent,
+    DiretivaNgclassComponent,
+    PipeExecComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{
+    provide:LOCALE_ID,
+    useValue: 'pt'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

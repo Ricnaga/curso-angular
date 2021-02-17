@@ -15,6 +15,8 @@ import { DiretivaNgclassComponent } from './diretiva-ngclass/diretiva-ngclass.co
 import { PipeExecComponent } from './shared/components/pipe-exec/pipe-exec.component';
 import localeBR from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import { LoginComponent } from './login/login.component';
+import { ExtratoComponent } from './extrato/extrato.component';
 
 registerLocaleData(localeBR, 'pt')
 
@@ -30,7 +32,9 @@ registerLocaleData(localeBR, 'pt')
     ExecDiretivasComponent,
     MemesComponent,
     DiretivaNgclassComponent,
-    PipeExecComponent
+    PipeExecComponent,
+    LoginComponent,
+    ExtratoComponent
   ],
   imports: [
     BrowserModule,

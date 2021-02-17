@@ -17,6 +17,7 @@ import localeBR from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { ExtratoComponent } from './extrato/extrato.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 registerLocaleData(localeBR, 'pt')
 
@@ -34,7 +35,8 @@ registerLocaleData(localeBR, 'pt')
     DiretivaNgclassComponent,
     PipeExecComponent,
     LoginComponent,
-    ExtratoComponent
+    ExtratoComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

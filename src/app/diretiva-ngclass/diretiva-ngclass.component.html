@@ -1,0 +1,9 @@
+<p>diretiva-ngclass works!</p>
+<button (click)="tornarVerde()">Make greeen</button>
+
+<p [ngClass]="deveSerVerde ? 'verde' : 'vermelho'">Teste de cor</p>
+<p [ngClass]="{'verde':deveSerVerde, 'vermelho':!deveSerVerde}">Teste de cor</p>
+
+<p [class]="deveSerVerde ? 'verde' : 'vermelho'">Teste property Binding</p>
+
+<p [class.verde]="deveSerVerde">Teste property Binding</p>

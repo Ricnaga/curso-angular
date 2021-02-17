@@ -10,6 +10,7 @@ import { DataBindingExecComponent } from './data-binding-exec/data-binding-exec.
 import { ContadorComponent } from './contador/contador.component';
 import { ExerciseExplainedComponent } from './exercise-explained/exercise-explained.component';
 import { ExecDiretivasComponent } from './exec-diretivas/exec-diretivas.component';
+import { MemesComponent } from './memes/memes.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ExecDiretivasComponent } from './exec-diretivas/exec-diretivas.componen
     DataBindingExecComponent,
     ContadorComponent,
     ExerciseExplainedComponent,
-    ExecDiretivasComponent
+    ExecDiretivasComponent,
+    MemesComponent
   ],
   imports: [
     BrowserModule,

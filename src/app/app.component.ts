@@ -8,12 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   wordApp = 'uma palavra do appcomponent';
   favoriteColor = 'green';
-  title = 'titulo via appComponent';
+  title = 'Bem vindo ao App';
   receiveValue = 0;
 
   constructor() {
     setTimeout(() => {
-      this.title = 'titulo alterado em 3 segundos';
+      this.title = 'Sinta-se a vontade :)';
     }, 3000);
   }
 

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 interface Transactions {
   id: number;
@@ -14,10 +15,12 @@ interface Transactions {
 })
 export class ExtratoService {
 
+  API_URL = environment.API_URL
+
   constructor(private http:HttpClient) {}
 
   getTransacoes(){
-    return this.http.get<Transactions[]>('http://localhost:3000/transacoes');
+    return this.http.get<Transactions[]>(this.API_URL);
   //   return [{
   //     id: 1,
   //     data: "2020-02-04T13:00:24.744Z",

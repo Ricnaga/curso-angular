@@ -18,16 +18,29 @@ interface Transactions {
 
 export class ExtratoComponent implements OnInit {
 
-  transacoes:Transactions[];
-
+  transacoes: Transactions[];
+  isLoading: boolean;
+  loadingError: boolean;
 
   constructor(private extratoService: ExtratoService) {
   }
 
   ngOnInit() {
+    this.loadExtrato();
+  }
+
+  loadExtrato() {
+    this.isLoading = true;
+    this.loadingError = false;
+
     this.extratoService.getTransacoes().subscribe(response => {
+      this.isLoading = false;
       this.transacoes = response;
-    })
+    }), error => {
+      this.isLoading = false;
+      this.loadingError = true;
+
+    }
   }
 
 }

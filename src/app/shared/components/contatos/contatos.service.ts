@@ -23,4 +23,8 @@ export class ContatosService {
   getContatos(){
     return this.http.get<Contacts[]>(this.API_URL_CONTATOS)
   }
+
+  getContato(id:string){
+    return this.http.get<Contacts>(this.API_URL_CONTATOS+'/'+id)
+  }
 }

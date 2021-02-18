@@ -9,6 +9,7 @@ import { ExtratoComponent } from './extrato/extrato.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { DetalhesContatosComponent } from './shared/components/contatos/detalhes-contatos/detalhes-contatos.component';
 import localeBR from '@angular/common/locales/pt';
 
 registerLocaleData(localeBR, 'pt')
@@ -19,7 +20,8 @@ registerLocaleData(localeBR, 'pt')
     HomeComponent,
     LoginComponent,
     ExtratoComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DetalhesContatosComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,7 @@ registerLocaleData(localeBR, 'pt')
     SharedModule
   ],
   providers: [{
-    provide:LOCALE_ID,
+    provide: LOCALE_ID,
     useValue: 'pt'
   }],
   bootstrap: [AppComponent]

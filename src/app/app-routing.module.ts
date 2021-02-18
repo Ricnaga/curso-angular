@@ -4,6 +4,7 @@ import { ExtratoComponent } from './extrato/extrato.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ContatosComponent } from './shared/components/contatos/contatos.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,9 @@ const routes: Routes = [
   },
   {
     path: 'extrato', component: ExtratoComponent
+  },
+  {
+    path: 'contatos', component: ContatosComponent
   },
   {
     path: '**', component: NotFoundComponent

@@ -19,8 +19,12 @@ export class ExtratoService {
 
   constructor(private http:HttpClient) {}
 
-  getTransacoes(){
-    return this.http.get<Transactions[]>(this.API_URL);
+  getTransacoes(page:number){
+    return this.http.get<Transactions[]>(this.API_URL,{
+      params:{
+        _page: String(page),
+      }
+    });
   //   return [{
   //     id: 1,
   //     data: "2020-02-04T13:00:24.744Z",

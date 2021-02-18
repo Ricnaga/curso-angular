@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "fake": "json-server fakeapi.json"
+    "fake": "json-server fakeapi.json",
+    "contatos": "json-server contatos.json"
   },
   "private": true,
   "dependencies": {

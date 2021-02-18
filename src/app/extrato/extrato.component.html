@@ -8,21 +8,26 @@
     <button (click)="loadExtrato()">Tente novamente</button>
   </div>
 
-  <table class="table table-hover" *ngIf="!isLoading && !loadingError">
-    <tr>
-      <th>ID</th>
-      <th>Data</th>
-      <th>Descrição</th>
-      <th>Valor</th>
-      <th>Categoria</th>
-    </tr>
-    <tr *ngFor="let transacao of transacoes ">
-      <td>{{transacao.id}}</td>
-      <td>{{transacao.data}}</td>
-      <td>{{transacao.descricao}}</td>
-      <td>{{transacao.valor | currency:'BRL'}}</td>
-      <td>{{transacao.categoria}}</td>
-    </tr>
-  </table>
+  <div *ngIf="!isLoading && !loadingError">
+    <button (click)="previousPage()" [disabled]="pages == 1" class="btn btn-primary">Voltar</button>
+    <p>Página atual:{{pages}} </p>
+    <button (click)="nextPage()"class="btn btn-primary">Próxima</button>
 
+    <table class="table table-hover">
+      <tr>
+        <th>ID</th>
+        <th>Data</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th>Categoria</th>
+      </tr>
+      <tr *ngFor="let transacao of transacoes ">
+        <td>{{transacao.id}}</td>
+        <td>{{transacao.data}}</td>
+        <td>{{transacao.descricao}}</td>
+        <td>{{transacao.valor | currency:'BRL'}}</td>
+        <td>{{transacao.categoria}}</td>
+      </tr>
+    </table>
+  </div>
 </div>

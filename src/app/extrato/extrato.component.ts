@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ExtratoService } from './extrato.service';
+import { finalize, take } from 'rxjs/operators'
 
 interface Transactions {
   id: number;
@@ -21,6 +22,7 @@ export class ExtratoComponent implements OnInit {
   transacoes: Transactions[];
   isLoading: boolean;
   loadingError: boolean;
+  pages = 1;
 
   constructor(private extratoService: ExtratoService) {
   }
@@ -33,14 +35,30 @@ export class ExtratoComponent implements OnInit {
     this.isLoading = true;
     this.loadingError = false;
 
-    this.extratoService.getTransacoes().subscribe(response => {
-      this.isLoading = false;
-      this.transacoes = response;
-    }), error => {
-      this.isLoading = false;
-      this.loadingError = true;
-
-    }
+    this.extratoService.getTransacoes(this.pages)
+      .pipe(take(1),
+        finalize(() => this.isLoading = false)
+      )
+      .subscribe(
+          response => this.onSuccess(response),
+          error => this.onError(error))
   }
 
+  onSuccess(response: Transactions[]) {
+    this.transacoes = response;
+  }
+
+  onError(error: any) {
+    this.loadingError = true;
+  }
+
+  previousPage(){
+    this.pages--;
+    this.loadExtrato()
+  }
+
+  nextPage(){
+    this.pages++;
+    this.loadExtrato()
+  }
 }

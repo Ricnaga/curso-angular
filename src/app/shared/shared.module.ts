@@ -10,6 +10,7 @@ import { MemesComponent } from '../memes/memes.component';
 import { DiretivaNgclassComponent } from '../diretiva-ngclass/diretiva-ngclass.component';
 import { PipeExecComponent } from './components/pipe-exec/pipe-exec.component';
 import { RouterModule } from '@angular/router';
+import { ContatosComponent } from './components/contatos/contatos.component';
 
 
 
@@ -24,6 +25,7 @@ import { RouterModule } from '@angular/router';
     MemesComponent,
     DiretivaNgclassComponent,
     PipeExecComponent,
+    ContatosComponent,
   ],
   imports: [
     CommonModule,
@@ -39,6 +41,7 @@ import { RouterModule } from '@angular/router';
     MemesComponent,
     DiretivaNgclassComponent,
     PipeExecComponent,
+    ContatosComponent,
   ]
 
 })

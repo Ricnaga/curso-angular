@@ -7,7 +7,7 @@
       placeholder="Email"
       name="email"
       [(ngModel)]="email" email required
-      [class.is-invalid]="showErrorOnEmail('email', form)">
+      [class.is-invalid]="showErrorOnEmail('email', form)" #emailInput>
 
 
     <div class="text-left invalid-feedback"
@@ -23,7 +23,7 @@
       name="password"
       [(ngModel)]="password"
       required
-      [class.is-invalid]="showErrorOnEmail('password', form)">
+      [class.is-invalid]="showErrorOnEmail('password', form)" #passwordInput>
 
       <div class="text-left invalid-feedback"
       *ngIf="showErrorOnEmail('password', form)">Senha inválida

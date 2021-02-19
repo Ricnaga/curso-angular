@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { finalize } from 'rxjs/operators';
 import { LoginService } from './login.service';
 
@@ -19,6 +20,7 @@ export class LoginComponent {
   loginError: boolean;
 
   constructor(
+    private router: Router,
     private loginService: LoginService
   ) {
 
@@ -54,14 +56,18 @@ export class LoginComponent {
         finalize(() => this.isLoading = false)
       )
       .subscribe(
-        response => {
-          console.log('Sucesso')
-        },
-        error => {
-          this.loginError = true
-          console.log('Erro')
-        }
+        response =>
+          this.onLoginSuccess(),
+        error => this.onLoginError()
       )
+  }
+
+  onLoginSuccess() {
+    this.router.navigate(['home'])
+  }
+
+  onLoginError() {
+    this.loginError = true
   }
 
   showErrorOnEmail(controlName: string, form: NgForm) {

@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DetalhesContatosComponent } from './shared/components/contatos/detalhes-contatos/detalhes-contatos.component';
 import localeBR from '@angular/common/locales/pt';
+import { FormsModule } from '@angular/forms';
 
 registerLocaleData(localeBR, 'pt')
 
@@ -27,6 +28,7 @@ registerLocaleData(localeBR, 'pt')
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     SharedModule
   ],
   providers: [{

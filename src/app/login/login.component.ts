@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
     if (!form.controls[controlName]) {
       return false
     }
-
     return form.controls[controlName].invalid && form.controls[controlName].touched
   }
 }

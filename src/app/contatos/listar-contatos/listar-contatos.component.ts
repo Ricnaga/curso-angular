@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { take } from 'rxjs/operators';
-import { ContatosService } from './contatos.service';
+import { ContatosService } from '../contatos.service';
 
 interface Contacts {
   id: number;
@@ -13,11 +13,11 @@ interface Contacts {
 }
 
 @Component({
-  selector: 'app-contatos',
-  templateUrl: './contatos.component.html',
-  styleUrls: ['./contatos.component.scss']
+  selector: 'app-listar-contatos',
+  templateUrl: './listar-contatos.component.html',
+  styleUrls: ['./listar-contatos.component.scss']
 })
-export class ContatosComponent implements OnInit {
+export class ListarContatosComponent implements OnInit {
 
   contatos: Contacts[]
   loadingError: boolean;

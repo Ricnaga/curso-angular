@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../shared/interface/user.interface';
 import { AuthService } from '../shared/services/auth/auth.service';
-
-interface UserRequest {
-  nome: string;
-  sobrenome: string;
-  email: string;
-}
 
 @Component({
   selector: 'app-home',
@@ -14,7 +9,7 @@ interface UserRequest {
 })
 export class HomeComponent implements OnInit {
 
-  user: UserRequest
+  user: User
 
   constructor(
     private authService: AuthService

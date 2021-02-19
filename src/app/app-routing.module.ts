@@ -6,27 +6,34 @@ import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ContatosComponent } from './shared/components/contatos/contatos.component';
 import { DetalhesContatosComponent } from './shared/components/contatos/detalhes-contatos/detalhes-contatos.component';
+import { IsLoggedGuard } from './shared/guard/isLogged/is-logged.guard';
+import { IsNotLoggedGuard } from './shared/guard/isNotLogged/is-not-logged.guard';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'home',
-    pathMatch:'full'
+    pathMatch: 'full'
   },
   {
-    path: 'home', component: HomeComponent
+    path: 'home', component: HomeComponent,
+    canActivate: [IsLoggedGuard]
   },
   {
-    path: 'login', component: LoginComponent
+    path: 'login', component: LoginComponent,
+    canActivate: [IsNotLoggedGuard]
   },
   {
-    path: 'extrato', component: ExtratoComponent
+    path: 'extrato', component: ExtratoComponent,
+    canActivate: [IsLoggedGuard]
   },
   {
-    path: 'contatos', component: ContatosComponent
+    path: 'contatos', component: ContatosComponent,
+    canActivate: [IsLoggedGuard]
   },
   {
-    path: 'contatos/:id', component: DetalhesContatosComponent
+    path: 'contatos/:id', component: DetalhesContatosComponent,
+    canActivate: [IsLoggedGuard]
   },
   {
     path: '**', component: NotFoundComponent

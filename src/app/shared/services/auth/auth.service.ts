@@ -7,7 +7,7 @@ import { User } from '../../interface/user.interface';
 export class AuthService {
 
   user: User
-  token:string
+  token: string
 
   constructor() { }
 
@@ -30,12 +30,12 @@ export class AuthService {
     return null;
   }
 
-  setToken(token:string){
+  setToken(token: string) {
     this.token = token
     localStorage.setItem('token', token)
   }
 
-  getToken(){
+  getToken() {
     if (this.token) {
       return this.token
     }
@@ -47,5 +47,13 @@ export class AuthService {
     }
 
     return null;
+  }
+
+  isLogged(): boolean {
+    if (this.getUser() && this.getToken()) {
+      return true
+    }
+
+    return false
   }
 }

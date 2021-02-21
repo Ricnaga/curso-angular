@@ -1,4 +1,4 @@
-# Lacademi
+# Curso angular
 ### <div align="right">🟢Status: finalizado😊 </div>
 
 ## Descrição do Projeto

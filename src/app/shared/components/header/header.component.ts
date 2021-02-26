@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -6,13 +7,17 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./header.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent  {
   @Input() newTitle: string;
 
   title = 'Seja bem-vindo from header';
 
-  constructor() { }
+  constructor(
+    private authService: AuthService
+  ) { }
 
-  ngOnInit(): void {
+
+  logout() {
+    this.authService.logout()
   }
 }

@@ -128,10 +128,10 @@
     ora "5.3.0"
     rxjs "6.6.3"
 
-"@angular/animations@~11.2.0":
-  version "11.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-11.2.1.tgz#970d79add4c2a4abc0ed91e6cf5920c65dda2d99"
-  integrity sha512-U2gtMaiVfTNMn0FPpSDTgOgtYc45QUnQcc2Po40rCmgH7BGyJAOgmaXY9uv319Jjl+vNrX+bbXaZix73Zpjfyg==
+"@angular/animations@^11.2.3":
+  version "11.2.3"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-11.2.3.tgz#518183e5f7b8c3b304020ea86d12cc3216142cc9"
+  integrity sha512-Z6sHIeTeeZrRAW83NI7FO7THF50cPCFkkuvVah3qmCqopY6FuoHKUBEENyGzQGH69LbGFYhEppY8KM/6JtVF6Q==
   dependencies:
     tslib "^2.0.0"
 
@@ -6128,6 +6128,13 @@ next-tick@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
+
+ngx-toastr@^13.2.0:
+  version "13.2.0"
+  resolved "https://registry.yarnpkg.com/ngx-toastr/-/ngx-toastr-13.2.0.tgz#3ef047c977a7d0fb67fed9338b8f5add3c87b356"
+  integrity sha512-XU+wACX5hxwOJ4BtPMAUExQmYbjfvH3C/R4vcC9QK/dX2Zw+2w9tS9m4W6TUFyR92xZ/tGLBtsqRdrDRn3fJCw==
+  dependencies:
+    tslib "^2.0.0"
 
 nice-try@^1.0.4:
   version "1.0.5"

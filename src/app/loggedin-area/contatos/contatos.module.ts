@@ -4,16 +4,20 @@ import { CommonModule } from '@angular/common';
 import { ContatosRoutingModule } from './contatos-routing.module';
 import { ListarContatosComponent } from './listar-contatos/listar-contatos.component';
 import { DetalhesContatosComponent } from './detalhes-contatos/detalhes-contatos.component';
+import { NovoContatoComponent } from './novo-contato/novo-contato.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     ListarContatosComponent,
-    DetalhesContatosComponent
+    DetalhesContatosComponent,
+    NovoContatoComponent
   ],
   imports: [
     CommonModule,
-    ContatosRoutingModule
+    ContatosRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class ContatosModule { }

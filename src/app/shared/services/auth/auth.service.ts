@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../../interface/user.interface';
 
 @Injectable({
@@ -9,7 +10,9 @@ export class AuthService {
   user: User
   token: string
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   setUser(user: User) {
     this.user = user
@@ -55,5 +58,12 @@ export class AuthService {
     }
 
     return false
+  }
+
+  logout() {
+    this.user = null
+    this.token = null
+    localStorage.clear()
+    this.router.navigate(['login'])
   }
 }

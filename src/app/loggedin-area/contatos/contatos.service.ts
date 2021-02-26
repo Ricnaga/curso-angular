@@ -42,7 +42,7 @@ export class ContatosService {
     return this.http.get<Contacts>(this.API_URL_CONTATOS + '/' + id)
   }
 
-  deleteContato(id: string) {
+  deleteContato(id: number) {
     return this.http.delete<Contacts>(this.API_URL_CONTATOS + '/' + id)
   }
 }

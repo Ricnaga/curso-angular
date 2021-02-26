@@ -13,7 +13,9 @@ const routes: Routes = [
     canActivate: [IsLoggedGuard]
   },
   {
-    path: 'login', component: LoginComponent,
+    path: 'login',
+    loadChildren: () => import('./login/login.module')
+    .then(m => m.LoginModule),
     canActivate: [IsNotLoggedGuard]
   },
   {

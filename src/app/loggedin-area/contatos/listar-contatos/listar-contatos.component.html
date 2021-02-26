@@ -8,6 +8,8 @@
     <button (click)="loadExtrato()">Tente novamente</button>
   </div>
 
+  <button class="btn btn-dager m-1" (click)="newContact()">Novo contato</button>
+
   <div *ngIf="!isLoading && !loadingError">
 
     <table class="table table-hover">
@@ -23,7 +25,8 @@
       <tr *ngFor="let contato of contatos ">
 
         <td>{{contato.nome}}</td>
-        <td><button class="btn btn-primary" (click)="goToDetails(contato.id)">Ver detalhes</button></td>
+        <td><button class="btn btn-primary m-1" (click)="goToDetails(contato.id)">Ver detalhes</button></td>
+        <td><button class="btn btn-dager m-1" (click)="deleteContact(contato.id)">Deletar</button></td>
 
       </tr>
     </table>

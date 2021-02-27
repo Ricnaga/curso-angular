@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ContatosRoutingModule } from './contatos-routing.module';
 import { ListarContatosComponent } from './listar-contatos/listar-contatos.component';
 import { DetalhesContatosComponent } from './detalhes-contatos/detalhes-contatos.component';
-import { NovoContatoComponent } from './novo-contato/novo-contato.component';
+import { EditarContatoComponent } from './editar-contato/editar-contato.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -12,7 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     ListarContatosComponent,
     DetalhesContatosComponent,
-    NovoContatoComponent
+    EditarContatoComponent
   ],
   imports: [
     CommonModule,

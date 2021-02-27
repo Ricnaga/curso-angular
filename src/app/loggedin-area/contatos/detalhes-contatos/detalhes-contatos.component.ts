@@ -24,7 +24,7 @@ export class DetalhesContatosComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private contatoService: ContatosService,
+    private contatosService: ContatosService,
     private router: Router
   ) { }
 
@@ -36,7 +36,7 @@ export class DetalhesContatosComponent implements OnInit {
   loadContato(idContato: string) {
     this.isLoading = true
     this.loadingError = false;
-    this.contatoService.getContato(idContato)
+    this.contatosService.getContato(idContato)
       .pipe(
         take(1),
         finalize(() => this.isLoading = false)

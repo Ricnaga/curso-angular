@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListarContatosComponent } from './listar-contatos/listar-contatos.component';
 import { DetalhesContatosComponent } from './detalhes-contatos/detalhes-contatos.component';
-import { NovoContatoComponent } from './novo-contato/novo-contato.component';
+import { EditarContatoComponent } from './editar-contato/editar-contato.component';
 
 const routes: Routes = [
   {
@@ -10,10 +10,13 @@ const routes: Routes = [
   },
   {
     path: 'novo',
-    component: NovoContatoComponent
+    component: EditarContatoComponent
   },
   {
     path: ':id', component: DetalhesContatosComponent
+  },
+  {
+    path: ':id/editar', component: EditarContatoComponent
   }
 ];
 

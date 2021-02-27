@@ -26,7 +26,8 @@
 
         <td>{{contato.nome}}</td>
         <td><button class="btn btn-primary m-1" (click)="goToDetails(contato.id)">Ver detalhes</button></td>
-        <td><button class="btn btn-dager m-1" (click)="deleteContact(contato.id)">Deletar</button></td>
+        <td><button class="btn btn-primary m-1" (click)="editContact(contato.id)">Editar</button></td>
+        <td><button class="btn btn-danger m-1" (click)="deleteContact(contato.id)">Deletar</button></td>
 
       </tr>
     </table>

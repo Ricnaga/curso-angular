@@ -1,7 +1,7 @@
 <div class="text-center">
   <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="form-signin pt-5">
     <div class="p-2">
-      <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="email" email required
+      <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="email" required email
         [class.is-invalid]="showErrorOnEmail('email', form)" #emailInput>
 
 

@@ -74,7 +74,11 @@ export class ListarContatosComponent implements OnInit {
     console.log('Ocorreu um erro ao deletar contato')
   }
 
-  newContact(){
+  newContact() {
     this.router.navigate([`contatos/novo`])
+  }
+
+  editContact(idContato: number) {
+    this.router.navigate([`contatos/${idContato}/editar`])
   }
 }

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NovoContatoComponent } from './novo-contato.component';
+import { NovoContatoComponent } from './editar-contato.component';
 
 describe('NovoContatoComponent', () => {
   let component: NovoContatoComponent;

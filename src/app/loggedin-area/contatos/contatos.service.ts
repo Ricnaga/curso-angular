@@ -18,12 +18,6 @@ export class ContatosService {
 
   API_URL_CONTATOS = environment.API_URL_CONTATOS
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      Authorization: "Autenticação"
-    })
-  };
-
   constructor(private http: HttpClient) { }
 
   getContatos() {
@@ -31,11 +25,11 @@ export class ContatosService {
   }
 
   getContato(id: string) {
-    return this.http.get<Contacts>(this.API_URL_CONTATOS + '/' + id, this.httpOptions)
+    return this.http.get<Contacts>(this.API_URL_CONTATOS + '/' + id)
   }
 
   createContato(contato: Contacts) {
-    return this.http.post<Contacts>(this.API_URL_CONTATOS, contato, this.httpOptions)
+    return this.http.post<Contacts>(this.API_URL_CONTATOS, contato)
   }
 
   updateContato(id: string, contato: Contacts) {

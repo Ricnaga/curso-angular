@@ -10,6 +10,8 @@ import { MemesComponent } from '../memes/memes.component';
 import { DiretivaNgclassComponent } from './components/diretiva-ngclass/diretiva-ngclass.component';
 import { PipeExecComponent } from './components/pipe-exec/pipe-exec.component';
 import { RouterModule } from '@angular/router';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 
 
@@ -29,7 +31,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterModule
   ],
-  exports:[
+  exports: [
     HeaderComponent,
     FooterComponent,
     DataBindingExecComponent,
@@ -39,7 +41,12 @@ import { RouterModule } from '@angular/router';
     MemesComponent,
     DiretivaNgclassComponent,
     PipeExecComponent,
-  ]
+  ],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi:true
+  }]
 
 })
 export class SharedModule { }

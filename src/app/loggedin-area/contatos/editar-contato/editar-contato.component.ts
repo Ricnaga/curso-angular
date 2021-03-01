@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { finalize, take } from 'rxjs/operators';
@@ -9,9 +9,9 @@ interface Contacts {
   id: number;
   nome: string;
   cpf: string;
-  banco: string;
   ag: string;
   cc: string;
+  banco: string;
 }
 
 @Component({
@@ -48,21 +48,18 @@ export class EditarContatoComponent implements OnInit {
     this.contatoForm = this.formBuilder.group({
       nome: ['', Validators.required],
       cpf: ['', Validators.required],
-      banco: ['', [Validators.required]],
-      ag: ['', [
-        Validators.required,
-        Validators.minLength(4)
-      ]],
-      cc: ['', [
-        Validators.required,
-        Validators.minLength(5)
-      ]]
+
+      dadosBancarios: this.formBuilder.group({
+        ag: ['', [Validators.required, Validators.minLength(4)]],
+        cc: ['', [Validators.required, Validators.minLength(5)]],
+        banco: ['', [Validators.required]]
+      })
     });
   }
 
   onSubmit() {
     if (this.contatoForm.invalid) {
-      this.validateAllFormField()
+      this.validateAllFormField(this.contatoForm)
 
       return
     }
@@ -73,6 +70,18 @@ export class EditarContatoComponent implements OnInit {
     }
 
     this.criarContato()
+  }
+
+  validateAllFormField(form: FormGroup) {
+    Object.keys(form.controls).forEach(field => {
+        const control = form.get(field)
+
+        if (control instanceof FormControl) {
+          control.markAsTouched()
+        } else if (control instanceof FormGroup) {
+          this.validateAllFormField(control)
+        }
+      })
   }
 
   criarContato() {
@@ -103,14 +112,6 @@ export class EditarContatoComponent implements OnInit {
 
   onError() {
     this.toastr.error('Error!', 'Alguma coisa deu erro, tente novamente')
-  }
-
-  validateAllFormField() {
-    Object.keys(this.contatoForm.controls)
-      .forEach(field => {
-        const control = this.contatoForm.get(field)
-        control.markAsTouched()
-      })
   }
 
   showErrorOnEmail(controlName: string) {
